@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: emencia.django.activity\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-22 17:45+0100\n"
+"PO-Revision-Date: 2010-02-22 17:50+0100\n"
+"Last-Translator: Fantomas <Fantomas42@gmail.com>\n"
+"Language-Team: fr <jfache@emencia.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: admin.py:14
+msgid "Advanced"
+msgstr "Avancé"
+
+#: admin.py:28
+msgid "No relative object"
+msgstr "Pas d'objet relatif"
+
+#: admin.py:30
+msgid "Related object"
+msgstr "Objet relatif"
+
+#: models.py:11
+msgid "insertion"
+msgstr "Insertion"
+
+#: models.py:12
+msgid "changement"
+msgstr "changement"
+
+#: models.py:14
+msgid "action type"
+msgstr "action"
+
+#: models.py:16
+msgid "title"
+msgstr "titre"
+
+#: models.py:17
+msgid "description"
+msgstr "description"
+
+#: models.py:23
+msgid "creation date"
+msgstr "date de création"
+
+#: models.py:27
+msgid "activity"
+msgstr "activité"
+
+#: models.py:28
+msgid "activities"
+msgstr "activités"
+
