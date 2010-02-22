@@ -26,5 +26,3 @@ class Activity(models.Model):
         ordering = ('creation_date',)
         verbose_name = _('activity')
         verbose_name_plural = _('activities')
-
-
