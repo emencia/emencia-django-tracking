@@ -47,6 +47,9 @@ class Activity(models.Model):
         return '%s %s' % (self.content_type.model.capitalize(),
                           self.title)
 
+    def get_absolute_url(self):
+        return self.url
+
     class Meta:
         ordering = ('creation_date',)
         verbose_name = _('activity')
