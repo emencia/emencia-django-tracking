@@ -7,15 +7,15 @@ from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 
+from emencia.django.tracking import settings
+
 INSERT = 1
 CHANGE = 2
-
-VISIBILITY_DAY = 60
 
 class ActivityManager(models.Manager):
 
     def recents(self):
-        period = datetime.now() - timedelta(days=VISIBILITY_DAY)
+        period = datetime.now() - timedelta(days=settings.VISIBILITY_DAYS)
         return self.get_query_set().filter(creation_date__gt=period)
                                            
     def insertions(self):
@@ -33,6 +33,7 @@ class Activity(models.Model):
 
     title = models.CharField(_('title'), max_length=250)
     description = models.TextField(_('description'), blank=True)
+    url = models.CharField(_('url'), max_length=250, blank=True)
 
     content_type = models.ForeignKey(ContentType, blank=True, null=True)
     object_id = models.PositiveIntegerField(blank=True, null=True)
@@ -43,7 +44,8 @@ class Activity(models.Model):
     objects = ActivityManager()
 
     def __unicode__(self):
-        return self.title
+        return '%s %s' % (self.content_type.model.capitalize(),
+                          self.title)
 
     class Meta:
         ordering = ('creation_date',)
