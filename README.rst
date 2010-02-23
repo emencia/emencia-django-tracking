@@ -1,4 +1,4 @@
 =======================
-Emencia Django Activity
+Emencia Django Tracking
 =======================
 

@@ -3,12 +3,12 @@ import os
 
 version = '0.1'
 
-setup(name='emencia.django.activity',
+setup(name='emencia.django.tracking',
       version=version,
-      description='Logging activities on your models for displaying site activity in your Django projects.',
+      description='Track activities on your models for displaying the site activity in your Django projects.',
       long_description=open('README.rst').read() + '\n' +
                        open(os.path.join('docs', 'HISTORY.txt')).read(),
-      keywords='django, activity, log, events',
+      keywords='django, activity, tracking, events',
       classifiers=[
           'Intended Audience :: Developers',
           'Operating System :: OS Independent',

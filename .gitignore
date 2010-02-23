@@ -3,7 +3,7 @@
 *~
 *.pyc
 .installed.cfg
-emencia.django.activity.egg-info/*
+emencia.django.tracking.egg-info/*
 lib/*
 include/*
 bin/*
