@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: emencia.django.activity\n"
+"Project-Id-Version: emencia.django.tracking\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-22 17:45+0100\n"
-"PO-Revision-Date: 2010-02-22 17:50+0100\n"
+"POT-Creation-Date: 2010-02-23 11:36+0100\n"
+"PO-Revision-Date: 2010-02-23 11:36+0100\n"
 "Last-Translator: Fantomas <Fantomas42@gmail.com>\n"
 "Language-Team: fr <jfache@emencia.com>\n"
 "MIME-Version: 1.0\n"
@@ -30,35 +30,35 @@ msgstr "Pas d'objet relatif"
 msgid "Related object"
 msgstr "Objet relatif"
 
-#: models.py:11
+#: models.py:29
 msgid "insertion"
 msgstr "Insertion"
 
-#: models.py:12
+#: models.py:30
 msgid "changement"
 msgstr "changement"
 
-#: models.py:14
+#: models.py:32
 msgid "action type"
 msgstr "action"
 
-#: models.py:16
+#: models.py:34
 msgid "title"
 msgstr "titre"
 
-#: models.py:17
+#: models.py:35
 msgid "description"
 msgstr "description"
 
-#: models.py:23
+#: models.py:41
 msgid "creation date"
 msgstr "date de création"
 
-#: models.py:27
+#: models.py:50
 msgid "activity"
 msgstr "activité"
 
-#: models.py:28
+#: models.py:51
 msgid "activities"
 msgstr "activités"
 
