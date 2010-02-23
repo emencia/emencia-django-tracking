@@ -1,6 +1,0 @@
-import os
-
-DATABASE_ENGINE = 'sqlite3'
-DATABASE_NAME = '/tmp/activity.db'
-INSTALLED_APPS = ['emencia.django.activity',]
-

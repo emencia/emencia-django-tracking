@@ -1,8 +1,8 @@
-"""Tracking for emencia.django.activity"""
+"""Tracking objects for emencia.django.tracking"""
 from django.db.models.signals import post_save
 
-from emencia.django.activity.models import Activity
-from emencia.django.activity.models import INSERT, CHANGE
+from emencia.django.tracking.models import Activity
+from emencia.django.tracking.models import INSERT, CHANGE
 
 def get_value(instance, field):
     value = getattr(instance, field)
@@ -42,5 +42,3 @@ class Tracker(object):
         self.registery[model] = tracking_class()
         post_save.connect(self.registery[model].save, sender=model)
 
-
-tracking = Tracker()

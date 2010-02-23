@@ -1,4 +1,7 @@
-"""Models for emencia.django.activity"""
+"""Models for emencia.django.tracking"""
+from datetime import datetime
+from datetime import timedelta
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes import generic
@@ -6,6 +9,21 @@ from django.contrib.contenttypes.models import ContentType
 
 INSERT = 1
 CHANGE = 2
+
+VISIBILITY_DAY = 60
+
+class ActivityManager(models.Manager):
+
+    def recents(self):
+        period = datetime.now() - timedelta(days=VISIBILITY_DAY)
+        return self.get_query_set().filter(creation_date__gt=period)
+                                           
+    def insertions(self):
+        return self.recents().filter(action=INSERT)
+
+    def changements(self):
+        return self.recents().filter(action=CHANGE)
+    
 
 class Activity(models.Model):
     ACTION_CHOICES = ((INSERT, _('insertion')),
@@ -21,6 +39,11 @@ class Activity(models.Model):
     content_object = generic.GenericForeignKey('content_type', 'object_id')
     
     creation_date = models.DateTimeField(_('creation date'), auto_now_add=True)
+
+    objects = ActivityManager()
+
+    def __unicode__(self):
+        return self.title
 
     class Meta:
         ordering = ('creation_date',)

@@ -1,9 +1,9 @@
-"""Admin for emencia.django.activity"""
+"""Admin for emencia.django.tracking"""
 from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 
-from emencia.django.activity.models import Activity
+from emencia.django.tracking.models import Activity
 
 class ActivityAdmin(admin.ModelAdmin):
     date_hierarchy = 'creation_date'
