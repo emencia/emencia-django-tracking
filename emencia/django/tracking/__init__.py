@@ -1,6 +1,7 @@
 """emencia.django.tracking"""
 import sys
 import inspect
+import warnings
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
@@ -31,7 +32,8 @@ def tracking_load_registry(*args, **kwargs):
             return
 
     if not hasattr(settings, 'TRACKING_REGISTRY'):
-        raise ImproperlyConfigured('You must define the TRACKING_REGISTRY setting, it should be a python module path string, for example "myproject.tracking"')
+        warnings.warn('You must define the TRACKING_REGISTRY setting, it should be a python module path string, for example "myproject.tracking"')
+        return
 
     import_module(settings.TRACKING_REGISTRY)
     
