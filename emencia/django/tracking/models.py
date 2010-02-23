@@ -17,13 +17,13 @@ class ActivityManager(models.Manager):
     def recents(self):
         period = datetime.now() - timedelta(days=settings.VISIBILITY_DAYS)
         return self.get_query_set().filter(creation_date__gt=period)
-                                           
+
     def insertions(self):
         return self.recents().filter(action=INSERT)
 
     def changements(self):
         return self.recents().filter(action=CHANGE)
-    
+
 
 class Activity(models.Model):
     ACTION_CHOICES = ((INSERT, _('insertion')),
@@ -38,7 +38,7 @@ class Activity(models.Model):
     content_type = models.ForeignKey(ContentType, blank=True, null=True)
     object_id = models.PositiveIntegerField(blank=True, null=True)
     content_object = generic.GenericForeignKey('content_type', 'object_id')
-    
+
     creation_date = models.DateTimeField(_('creation date'), auto_now_add=True)
 
     objects = ActivityManager()
