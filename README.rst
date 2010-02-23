@@ -4,8 +4,7 @@ Emencia Django Tracking
 
 The problematic was :
 
- *I have wrote some articles, and updating many pages on my Django website, 
-  how can I inform my visitors for these updates*
+ *I have wrote some articles, and updating many pages on my Django website, how can I inform my visitors for these updates ?*
 
 Emencia.django.tracking allow you to track the activity of your models without
 changing it, and display this timeline.
