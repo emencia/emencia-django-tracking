@@ -30,14 +30,22 @@ class ActivityManager(models.Manager):
     def recent_changes(self):
         return self.recents().filter(action=CHANGE)
 
-    def unique_objects(self):
+    def get_last_activity_model_ids(self):
         objects = set(self.get_query_set().values_list('content_type', 'object_id'))
-        pks = []
+        ids = []
         for obj in objects:
-            last_tracking = self.get_query_set().filter(content_type=obj[0],
+            last_activity = self.get_query_set().filter(content_type=obj[0],
                                                         object_id=obj[1]).latest('creation_date')
-            pks.append(last_tracking.id)
-        return self.get_query_set().filter(id__in=pks)
+            ids.append(last_activity.id)
+        return ids
+
+    def uniques(self):
+        ids = self.get_last_activity_model_ids()
+        return self.get_query_set().filter(id__in=ids)
+
+    def recent_uniques(self):
+        ids = self.get_last_activity_model_ids()
+        return self.recents().filter(id__in=ids)
         
         
 
