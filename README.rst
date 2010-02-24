@@ -62,6 +62,14 @@ Imagine we have an model named *News* with a *description* and *title* field.
   >>>
   >>> tracking.register(Newsletter, NewsletterTracking)
 
+Urls
+----
+
+In your project urls.py adding this following line to serve the views packaged in the app. ::
+
+  >>> url(r'^tracking/', include('emencia.django.tracking.urls')),
+
+
 Synchronization
 ---------------
 
