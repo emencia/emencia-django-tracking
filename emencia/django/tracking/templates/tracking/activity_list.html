@@ -1,0 +1,17 @@
+{% extends "directory/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Activity list" %}{% endblock%}
+
+{% block content %}
+<ul>
+  {% for object in object_list %}
+  <li>
+    <a href="{{ object.get_absolute_url }}">{{ object }}</a>
+  </li>
+  {% empty %}
+  <li>{% trans "No activities" %}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
+
