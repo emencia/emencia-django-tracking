@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: emencia.django.tracking\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-23 11:36+0100\n"
-"PO-Revision-Date: 2010-02-23 11:36+0100\n"
+"POT-Creation-Date: 2010-02-24 15:06+0100\n"
+"PO-Revision-Date: 2010-02-24 15:06+0100\n"
 "Last-Translator: Fantomas <Fantomas42@gmail.com>\n"
 "Language-Team: fr <jfache@emencia.com>\n"
 "MIME-Version: 1.0\n"
@@ -18,15 +18,15 @@ msgstr ""
 "X-Poedit-Country: FRANCE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: admin.py:14
+#: admin.py:13
 msgid "Advanced"
 msgstr "Avancé"
 
-#: admin.py:28
+#: admin.py:25
 msgid "No relative object"
 msgstr "Pas d'objet relatif"
 
-#: admin.py:30
+#: admin.py:27
 msgid "Related object"
 msgstr "Objet relatif"
 
@@ -50,15 +50,27 @@ msgstr "titre"
 msgid "description"
 msgstr "description"
 
-#: models.py:41
+#: models.py:36
+msgid "url"
+msgstr "url"
+
+#: models.py:42
 msgid "creation date"
 msgstr "date de création"
 
-#: models.py:50
+#: models.py:55
 msgid "activity"
 msgstr "activité"
 
-#: models.py:51
+#: models.py:56
 msgid "activities"
 msgstr "activités"
+
+#: templates/tracking/activity_list.html:4
+msgid "Activity list"
+msgstr "Liste des dernières activités"
+
+#: templates/tracking/activity_list.html:13
+msgid "No activities"
+msgstr "Pas d'activité"
 
