@@ -69,6 +69,31 @@ In your project urls.py adding this following line to serve the views packaged i
 
   >>> url(r'^tracking/', include('emencia.django.tracking.urls')),
 
+This urlset provides many views for displaying the activities :
+
+/
+  Display the latest activity of each model instances tracked in a recent period.
+
+/all/
+  Display all the activities tracked.
+
+/recents/
+  Display all the recents activities tracked.
+  
+/inserts/
+  Display the all tracked models creations
+
+/recent_inserts/
+  Display the recent tracked models creations
+
+/changes/
+  Display the all tracked models changes
+
+/recent_changes/
+  Display the recent tracked models changes
+
+/uniques/
+  Display all the latest activity of each model instances tracked.
 
 Synchronization
 ---------------
