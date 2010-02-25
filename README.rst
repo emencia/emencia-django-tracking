@@ -4,27 +4,27 @@ Emencia Django Tracking
 
 The problematic was :
 
- *I have wrote some articles, and updating many pages on my Django website, how can I inform my visitors for these updates ?*
+ *I wrote some articles, and updated many pages on my Django website, how can I inform my visitors of these updates ?*
 
-Emencia.django.tracking allow you to track the activity of your models without
-changing it, and display this timeline.
+Emencia.django.tracking allows you to track the activities of your models and display them on a timeline without
+changing the models' code.
 
 .. contents::
 
 Features
 ========
 
-More than a long speech, here the list of the main features :
+Better than a long speech, here is a list of the main features :
 
-  * No needs to change your models.
+  * No need to change your models.
   * Highly customizable.
-  * Views and template tags for displaying activities.
+  * Views and template tags to display the activities.
 
 Installation
 ============
 
-You could retrieve the last sources from http://github.com/Fantomas42/emencia-django-tracking and running the installation script ::
-    
+You can retrieve the last sources from http://github.com/Fantomas42/emencia-django-tracking and run the installation script ::
+
   $> python setup.py install
 
 or use pip ::
@@ -44,13 +44,13 @@ Then register **emencia.django.tracking** and **contenttypes** in the INSTALLED_
 The Registry
 ------------
 
-Now create a python module somewhere in your project, for example **tracking.py** in your project directory (lets suppose its called "project"), 
+Now create a python module somewhere in your project, for example **tracking.py** in your project directory (let's suppose it is called "project"),
 and add something like the following line to your project's settings : ::
 
   >>> TRACKING_REGISTRY = 'project.tracking'
 
 In the tracking.py module we will register the models we want to track.
-Imagine we have an model named *News* with a *description* and *title* field.
+Imagine we have a model named *News* with a *description* and *title* field.
 
   >>> from emencia.django.tracking import tracking
   >>> from emencia.django.tracking import TrackingOptions
@@ -65,39 +65,39 @@ Imagine we have an model named *News* with a *description* and *title* field.
 Urls
 ----
 
-In your project urls.py adding this following line to serve the views packaged in the app. ::
+In your project urls.py add this following line to serve the views packaged in the app. ::
 
   >>> url(r'^tracking/', include('emencia.django.tracking.urls')),
 
-This urlset provides many views for displaying the activities :
+This urlset provides many views to display these activities :
 
 /
-  Display the latest activity of each model instances tracked in a recent period.
+  Display the latest activity of each model instance tracked in a recent period.
 
 /all/
   Display all the activities tracked.
 
 /recents/
-  Display all the recents activities tracked.
-  
+  Display all the recent activities tracked.
+
 /inserts/
-  Display the all tracked models creations
+  Display all the creations of models tracked.
 
 /recent_inserts/
-  Display the recent tracked models creations
+  Display the recent creations of models tracked.
 
 /changes/
-  Display the all tracked models changes
+  Display all the changes of models tracked.
 
 /recent_changes/
-  Display the recent tracked models changes
+  Display the recent changes of models tracked.
 
 /uniques/
-  Display all the latest activity of each model instances tracked.
+  Display all the latest activity of each model instance tracked.
 
 Synchronization
 ---------------
 
-Now you can run a *syncdb* for installing the models into your database.
+Now you can run a *syncdb* to install the models into your database.
 
 
