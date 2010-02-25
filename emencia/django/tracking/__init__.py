@@ -31,7 +31,8 @@ def tracking_load_registry(*args, **kwargs):
         warnings.warn('You must define the TRACKING_REGISTRY setting, it should be a python module path string, for example "myproject.tracking"')
         return
 
-    import_module(project_settings.TRACKING_REGISTRY)
+    if project_settings.TRACKING_REGISTRY:
+        import_module(project_settings.TRACKING_REGISTRY)
 
 tracking_load_registry()
 
